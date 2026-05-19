@@ -1,0 +1,21 @@
+server {
+    listen 80;
+    server_name jv3signs.com www.jv3signs.com;
+
+    # Serve the built static site
+    root /srv/www/jv3signs/dist;
+    index index.html;
+
+    # Proxy /api to the Node.js server
+    location /api/ {
+        proxy_pass http://127.0.0.1:3001;
+        proxy_http_version 1.1;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+
+    # SPA fallback — all other routes serve index.html
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+}

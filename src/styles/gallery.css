@@ -1,0 +1,135 @@
+.gallery-page {
+  padding-top: 56px;
+  min-height: 100vh;
+}
+
+.gallery-page__hero {
+  padding: 4rem 0 3rem;
+}
+
+.gallery-page__heading {
+  font-size: 2.2rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+}
+
+.gallery-page__sub {
+  font-size: 0.95rem;
+  color: var(--muted);
+  max-width: 460px;
+  line-height: 1.65;
+}
+
+/* Grid */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  padding-bottom: 3rem;
+}
+
+.gallery-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: default;
+}
+
+.gallery-card:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+}
+
+.gallery-card__img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  background: #111;
+  display: block;
+}
+
+.gallery-card__img-placeholder {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #2a2a2a;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.gallery-card__body {
+  padding: 0.85rem 1rem;
+}
+
+.gallery-card__client {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.2rem;
+}
+
+.gallery-card__what {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.3rem;
+}
+
+.gallery-card__desc {
+  font-size: 0.8rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* Sticky bottom bar */
+.gallery-cta-bar {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+}
+
+.gallery-cta-bar span {
+  color: var(--muted);
+}
+
+.gallery-cta-bar a {
+  color: var(--accent);
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.gallery-cta-bar a:hover {
+  color: var(--accent-hover);
+}
+
+@media (max-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-page__heading {
+    font-size: 1.7rem;
+  }
+}
