@@ -7,5 +7,9 @@
       "WebSearch",
       "WebFetch(domain:unsplash.com)"
     ]
-  }
+  },
+  "enabledMcpjsonServers": [
+    "claude-flow"
+  ],
+  "enableAllProjectMcpServers": true
 }

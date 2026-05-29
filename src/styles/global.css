@@ -1,16 +1,31 @@
 :root {
-  --bg: #0c0c0c;
-  --surface: #161616;
-  --surface2: #1e1e1e;
-  --border: rgba(255, 255, 255, 0.06);
-  --accent: #3b82f6;
-  --accent-hover: #2563eb;
-  --text: #fff;
-  --muted: #888;
-  --muted2: #aaa;
-  --radius: 8px;
-  --radius-btn: 6px;
-  --transition: all 0.2s ease;
+  /* Paper + ink palette */
+  --paper: #f5efe4;        /* warm cream background */
+  --paper-2: #ece4d4;      /* slightly darker for sections */
+  --paper-3: #e2d8c2;      /* deeper warm for hover/contrast */
+  --ink: #1a1a1a;          /* near-black */
+  --ink-soft: #3a342e;     /* warm dark for body */
+  --ink-muted: #6f655a;    /* warm muted */
+  --ink-faint: #9c9286;    /* very muted */
+
+  /* Accent: sign-paint red + amber secondary */
+  --accent: #c0392b;
+  --accent-hover: #9c2d22;
+  --amber: #e8a73c;
+
+  /* Surfaces and rules */
+  --rule: #1a1a1a;
+  --rule-soft: #d8cdb8;
+  --shadow-hard: 4px 4px 0 var(--ink);
+  --shadow-hard-sm: 3px 3px 0 var(--ink);
+
+  /* Type */
+  --font-display: 'Anton', 'Oswald', Impact, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --radius: 2px;
+  --radius-btn: 0px;
+  --transition: all 0.15s ease;
 }
 
 *, *::before, *::after {
@@ -25,12 +40,18 @@ html {
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  background: var(--bg);
-  color: var(--text);
+  font-family: var(--font-body);
+  background: var(--paper);
+  color: var(--ink-soft);
   line-height: 1.6;
   opacity: 0;
   transition: opacity 0.25s ease;
+  /* Subtle paper grain */
+  background-image:
+    radial-gradient(rgba(26, 26, 26, 0.025) 1px, transparent 1px),
+    radial-gradient(rgba(26, 26, 26, 0.018) 1px, transparent 1px);
+  background-size: 3px 3px, 7px 7px;
+  background-position: 0 0, 1px 2px;
 }
 
 body.page-visible {
@@ -52,66 +73,102 @@ button {
   cursor: pointer;
   border: none;
   background: none;
+  color: inherit;
 }
 
 input, select, textarea {
   font-family: inherit;
 }
 
+/* Eyebrow / accent label: small caps tag */
 .accent-label {
-  display: inline-block;
-  font-size: 0.7rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
   font-weight: 700;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 0.75rem;
+  color: var(--ink);
+  margin-bottom: 1rem;
 }
 
+.accent-label::before {
+  content: '';
+  width: 22px;
+  height: 2px;
+  background: var(--accent);
+}
+
+/* Display heading utility */
+.display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: 0.005em;
+  line-height: 0.95;
+  color: var(--ink);
+  text-transform: uppercase;
+}
+
+/* Buttons: hard-edge sign block style */
 .btn-primary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.4rem;
+  gap: 0.55rem;
   background: var(--accent);
   color: #fff;
-  font-size: 0.9rem;
-  font-weight: 600;
-  padding: 0.65rem 1.4rem;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.95rem 1.6rem;
+  border: 2px solid var(--ink);
   border-radius: var(--radius-btn);
-  transition: var(--transition);
+  box-shadow: var(--shadow-hard-sm);
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.15s ease;
   white-space: nowrap;
 }
 
 .btn-primary:hover {
   background: var(--accent-hover);
-  transform: translateY(-1px);
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 var(--ink);
+}
+
+.btn-primary:active {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0 var(--ink);
 }
 
 .btn-ghost {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
   gap: 0.4rem;
   background: transparent;
-  color: var(--muted2);
-  font-size: 0.9rem;
-  font-weight: 600;
-  padding: 0.65rem 1.4rem;
-  border-radius: var(--radius-btn);
-  border: 1px solid var(--border);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.95rem 0.25rem;
+  border: none;
+  border-bottom: 2px solid var(--ink);
+  border-radius: 0;
   transition: var(--transition);
   white-space: nowrap;
 }
 
 .btn-ghost:hover {
-  border-color: rgba(255, 255, 255, 0.2);
-  color: var(--text);
-  transform: translateY(-1px);
+  color: var(--accent);
+  border-bottom-color: var(--accent);
 }
 
 .container {
-  max-width: 1100px;
+  max-width: 1180px;
   margin: 0 auto;
   padding: 0 1.5rem;
 }
@@ -120,8 +177,32 @@ input, select, textarea {
   padding: 5rem 0;
 }
 
+/* Hairline rule utilities */
+.rule {
+  height: 1px;
+  background: var(--ink);
+  border: 0;
+  margin: 0;
+}
+
+.rule--soft {
+  background: var(--rule-soft);
+}
+
+/* Selection */
+::selection {
+  background: var(--accent);
+  color: #fff;
+}
+
 @media (max-width: 640px) {
   .section {
     padding: 3.5rem 0;
+  }
+
+  .btn-primary,
+  .btn-ghost {
+    font-size: 0.72rem;
+    padding: 0.85rem 1.25rem;
   }
 }

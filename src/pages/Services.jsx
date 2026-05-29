@@ -39,31 +39,39 @@ export default function Services() {
   return (
     <div className="services-page">
       <div className="container">
-        <div className="services-page__hero">
+        <header className="services-page__hero">
           <span className="accent-label">What We Make</span>
-          <h1 className="services-page__heading">Our Services</h1>
+          <h1 className="services-page__heading display">Our Services</h1>
           <p className="services-page__intro">
             Every order is built custom. Browse what we offer and reach out to get a quote.
-            No prices listed, every job is different, and we'd rather give you an accurate
+            No prices listed. Every job is different, and we&apos;d rather give you an accurate
             number than a guess.
           </p>
-        </div>
+        </header>
 
         <div className="services-grid">
-          {services.map(({ Icon, name, desc }) => (
-            <div key={name} className="svc-card">
-              <div className="svc-card__icon"><Icon /></div>
-              <div className="svc-card__name">{name}</div>
+          {services.map(({ Icon, name, desc }, i) => (
+            <article key={name} className="svc-card">
+              <div className="svc-card__top">
+                <span className="svc-card__num">{String(i + 1).padStart(2, '0')}</span>
+                <div className="svc-card__icon"><Icon /></div>
+              </div>
+              <h3 className="svc-card__name display">{name}</h3>
               <p className="svc-card__desc">{desc}</p>
-            </div>
+              <div className="svc-card__rule" />
+              <Link to="/contact" className="svc-card__cta">Ask about this →</Link>
+            </article>
           ))}
         </div>
 
-        <div className="services-cta">
-          <h2 className="services-cta__heading">Don't see exactly what you need?</h2>
-          <p className="services-cta__sub">Just ask, we'll see what we can do.</p>
-          <Link to="/contact" className="btn-primary">Get in Touch</Link>
-        </div>
+        <section className="services-cta">
+          <div className="services-cta__inner">
+            <span className="accent-label">Custom Welcome</span>
+            <h2 className="services-cta__heading display">Don&apos;t see what you need?</h2>
+            <p className="services-cta__sub">Just ask. We&apos;ll see what we can do.</p>
+            <Link to="/contact" className="btn-primary">Get in Touch</Link>
+          </div>
+        </section>
       </div>
     </div>
   )

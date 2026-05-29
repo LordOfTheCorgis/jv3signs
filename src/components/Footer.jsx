@@ -11,7 +11,7 @@ export default function Footer() {
           <li><Link to="/services">Services</Link></li>
           <li><Link to="/contact">Contact</Link></li>
         </ul>
-        <span className="footer__copy">© 2025 JV3Signs</span>
+        <span className="footer__copy">©2026 JV3Signs</span>
       </div>
     </footer>
   )
