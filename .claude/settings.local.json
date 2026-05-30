@@ -5,11 +5,27 @@
       "Bash(npm run *)",
       "Bash(curl -s http://localhost:5173)",
       "WebSearch",
-      "WebFetch(domain:unsplash.com)"
+      "WebFetch(domain:unsplash.com)",
+      "Bash(cp \"jv3 logo.jpg\" \"jv3-logo.jpg\")",
+      "Bash(cp \"JV3 Signs Logo.png\" \"jv3-signs-logo.png\")",
+      "WebFetch(domain:www.wkalighting.com)",
+      "Bash(jobs)",
+      "PowerShell(Get-NetTCPConnection *)",
+      "Bash(python -c \"import PIL; print\\('PIL', PIL.__version__\\)\")",
+      "Bash(magick --version)",
+      "Bash(convert --version)",
+      "Bash(python -c \"from PIL import Image; im=Image.open\\('public/brand/jv3-signs-logo.png'\\); print\\('mode', im.mode, 'size', im.size\\); print\\('has_alpha', im.mode in \\('RGBA','LA'\\) or \\(im.mode=='P' and 'transparency' in im.info\\)\\)\")",
+      "Bash(echo \"exit: $?\")",
+      "Bash(npx vite *)",
+      "Bash(rm -rf dist)",
+      "Bash(node ./node_modules/vite/bin/vite.js build)",
+      "Bash(echo \"exit=$?\")",
+      "Read(//tmp/**)",
+      "Bash(awk 'NR>=228' global.css)"
     ]
   },
+  "enableAllProjectMcpServers": true,
   "enabledMcpjsonServers": [
     "claude-flow"
-  ],
-  "enableAllProjectMcpServers": true
+  ]
 }

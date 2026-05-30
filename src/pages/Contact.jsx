@@ -3,6 +3,18 @@ import '../styles/contact.css'
 
 const INITIAL = { name: '', email: '', phone: '', message: '' }
 
+// Family photo — used as the full-width background banner.
+// Add the file to /public and set the path, e.g. '/family-photo.jpg'.
+const FAMILY_PHOTO = null
+
+// Professional portrait of the owner — shown framed on the left.
+// Add to /public and set the path, e.g. '/owner.jpg'. A portrait/vertical shot works best.
+const OWNER_PHOTO = null
+
+// Placeholder — replace with the about-us paragraph the family is writing.
+const ABOUT_TEXT =
+  "JV3 Signs is a family-owned and operated custom sign shop — just the four of us, working out of our home to bring your ideas to life. Every order gets our full, personal attention, because to us it isn't just another sign — it's our family's name on your project. (The full story is on its way — check back soon!)"
+
 function validate(fields) {
   const errs = {}
   if (!fields.name.trim()) errs.name = 'Name is required.'
@@ -61,10 +73,35 @@ export default function Contact() {
 
   return (
     <div className="contact-page">
+      {/* About / Meet the Family — full-width photo banner */}
+      <section
+        className={`about-us${FAMILY_PHOTO ? '' : ' about-us--noimg'}`}
+        style={FAMILY_PHOTO ? { backgroundImage: `url(${FAMILY_PHOTO})` } : undefined}
+      >
+        <div className="container about-us__inner">
+          <div className="about-us__portrait">
+            {OWNER_PHOTO ? (
+              <img src={OWNER_PHOTO} alt="JV3 Signs owner" className="about-us__portrait-img" />
+            ) : (
+              <div className="about-us__portrait-ph">
+                <span>Photo<br />Coming Soon</span>
+              </div>
+            )}
+            <span className="about-us__badge">Family Owned</span>
+          </div>
+
+          <div className="about-us__content">
+            <span className="accent-label about-us__eyebrow">About JV3 Signs</span>
+            <h1 className="about-us__heading display">Meet the Family</h1>
+            <p className="about-us__text">{ABOUT_TEXT}</p>
+          </div>
+        </div>
+      </section>
+
       <div className="container">
         <div className="contact-page__hero">
           <span className="accent-label">Let's Work Together</span>
-          <h1 className="contact-page__heading">Get in Touch</h1>
+          <h2 className="contact-page__heading">Get in Touch</h2>
           <p className="contact-page__sub">
             Send a quick message and we'll reach out to talk through the details.
           </p>
@@ -166,11 +203,12 @@ export default function Contact() {
               </div>
               <div className="hiw-step">
                 <div className="hiw-step__num">3</div>
-                <p className="hiw-step__text">Your custom order gets made and delivered or arranged for pickup.</p>
+                <p className="hiw-step__text">Your custom order gets made, then shipped, delivered, or ready for local pickup.</p>
               </div>
             </div>
             <p className="contact-info__note">
-              No office, no storefront, just personal hands-on service for every order.
+              Based in Louisiana — local pickup and delivery available, and we ship orders
+              anywhere else. No office or storefront, just personal hands-on service for every order.
             </p>
             {/* Uncomment and fill in when ready:
             <div className="contact-info__links">

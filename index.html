@@ -3,13 +3,38 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JV3 Signs | Custom Signs, Banners & More</title>
-    <meta name="description" content="Custom signs, banners, stickers, and more. Every order made to order. Request a quote today." />
+    <link rel="icon" type="image/png" href="/brand/logo-light.png" />
+    <meta name="theme-color" content="#f50000" />
+    <title>JV3 Signs | Custom Signs, Banners &amp; Decals — Louisiana</title>
+    <meta name="description" content="Louisiana-based custom sign shop. Coroplast &amp; aluminum signs, vinyl banners, stickers, and decals — every order made to order and shipped anywhere. Request a quote." />
+    <meta name="keywords" content="custom signs Louisiana, vinyl banners, coroplast signs, aluminum signs, stickers, decals, yard signs, business signs" />
+
+    <!-- Open Graph / social sharing -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="JV3 Signs | Custom Signs, Banners &amp; Decals — Louisiana" />
+    <meta property="og:description" content="Louisiana-based custom sign shop. Signs, banners, stickers, and decals made to order and shipped anywhere." />
+    <meta property="og:image" content="/brand/logo-light.png" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="JV3 Signs | Custom Signs, Banners &amp; Decals" />
+    <meta name="twitter:description" content="Louisiana-based custom sign shop. Made to order, shipped anywhere." />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   </head>
   <body>
+    <script>
+      // Set theme before paint to avoid a flash of the wrong mode
+      (function () {
+        try {
+          var t = localStorage.getItem('theme');
+          if (t !== 'light' && t !== 'dark') {
+            t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+          }
+          document.documentElement.setAttribute('data-theme', t);
+        } catch (e) {}
+      })();
+    </script>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

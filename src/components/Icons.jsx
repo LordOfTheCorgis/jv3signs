@@ -35,3 +35,31 @@ export function IconBulk() {
     <svg {...props}><rect x="2" y="14" width="8" height="7" rx="1" /><rect x="9" y="14" width="13" height="7" rx="1" /><rect x="5" y="7" width="14" height="7" rx="1" /><rect x="8" y="3" width="8" height="4" rx="1" /></svg>
   )
 }
+
+export function IconSun() {
+  return (
+    <svg {...props}><circle cx="12" cy="12" r="4.5" /><line x1="12" y1="2" x2="12" y2="4.5" /><line x1="12" y1="19.5" x2="12" y2="22" /><line x1="2" y1="12" x2="4.5" y2="12" /><line x1="19.5" y1="12" x2="22" y2="12" /><line x1="4.9" y1="4.9" x2="6.7" y2="6.7" /><line x1="17.3" y1="17.3" x2="19.1" y2="19.1" /><line x1="4.9" y1="19.1" x2="6.7" y2="17.3" /><line x1="17.3" y1="6.7" x2="19.1" y2="4.9" /></svg>
+  )
+}
+
+export function IconMoon() {
+  return (
+    <svg {...props}><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" /></svg>
+  )
+}
+
+const brandProps = { width: 18, height: 18, viewBox: '0 0 24 24', fill: 'currentColor' }
+
+export function IconFacebook() {
+  return (
+    <svg {...brandProps} aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z" /></svg>
+  )
+}
+
+export function IconInstagram() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="2.5" y="2.5" width="19" height="19" rx="5" /><circle cx="12" cy="12" r="4.2" /><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none" />
+    </svg>
+  )
+}

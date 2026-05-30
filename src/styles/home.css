@@ -49,9 +49,9 @@
 
 /* Hero: signage plate (right side) */
 .hero__plate {
-  background: var(--paper);
-  border: 2px solid var(--ink);
-  box-shadow: 8px 8px 0 var(--ink);
+  background: var(--card);
+  border: 2px solid var(--border);
+  box-shadow: 8px 8px 0 var(--shadow-color);
   padding: 1.75rem 1.75rem 1.5rem;
   position: relative;
   max-width: 360px;
@@ -70,7 +70,7 @@
   letter-spacing: 0.18em;
   text-transform: uppercase;
   padding: 0.3rem 0.6rem;
-  border: 2px solid var(--ink);
+  border: 2px solid var(--border);
 }
 
 .hero__plate-big {
@@ -125,8 +125,8 @@
    ───────────────────────────────────────────── */
 .about-strip {
   background: var(--paper-2);
-  border-top: 2px solid var(--ink);
-  border-bottom: 2px solid var(--ink);
+  border-top: 2px solid var(--border);
+  border-bottom: 2px solid var(--border);
   padding: 4rem 0;
 }
 
@@ -183,18 +183,18 @@
 }
 
 .service-card {
-  background: var(--paper);
-  border: 2px solid var(--ink);
+  background: var(--card);
+  border: 2px solid var(--border);
   padding: 1.5rem 1.5rem 1.75rem;
   transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
-  box-shadow: 4px 4px 0 var(--ink);
+  box-shadow: 4px 4px 0 var(--shadow-color);
   position: relative;
 }
 
 .service-card:hover {
   transform: translate(-3px, -3px);
-  box-shadow: 7px 7px 0 var(--ink);
-  background: #fffdf8;
+  box-shadow: 7px 7px 0 var(--shadow-color);
+  background: var(--surface);
 }
 
 .service-card__top {
@@ -245,8 +245,8 @@
   position: relative;
   background: var(--paper-2);
   color: var(--ink);
-  border: 2px solid var(--ink);
-  box-shadow: 6px 6px 0 var(--ink);
+  border: 2px solid var(--border);
+  box-shadow: 6px 6px 0 var(--shadow-color);
   margin-right: 6px;
   padding: 4.5rem 2.5rem;
   text-align: center;
@@ -259,6 +259,19 @@
   inset: 12px;
   border: 1px dashed var(--rule-soft);
   pointer-events: none;
+}
+
+.cta-banner::after {
+  content: 'JV3';
+  position: absolute;
+  right: 1.5rem;
+  bottom: -1.75rem;
+  font-family: var(--font-display);
+  font-size: 9rem;
+  line-height: 1;
+  color: var(--watermark);
+  pointer-events: none;
+  z-index: 0;
 }
 
 .cta-banner__inner {
@@ -302,13 +315,13 @@
 .cta-banner__btn {
   background: var(--accent);
   color: #fff;
-  border-color: var(--ink);
-  box-shadow: 4px 4px 0 var(--ink);
+  border-color: var(--border);
+  box-shadow: 4px 4px 0 var(--shadow-color);
 }
 
 .cta-banner__btn:hover {
   background: var(--accent-hover);
-  box-shadow: 6px 6px 0 var(--ink);
+  box-shadow: 6px 6px 0 var(--shadow-color);
 }
 
 /* Corner brackets */
@@ -316,7 +329,7 @@
   position: absolute;
   width: 18px;
   height: 18px;
-  border: 2px solid var(--ink);
+  border: 2px solid var(--border);
   z-index: 1;
 }
 .cta-banner__corner--tl { top: 18px; left: 18px; border-right: 0; border-bottom: 0; }

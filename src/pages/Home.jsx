@@ -27,7 +27,7 @@ export default function Home() {
       <section className="hero">
         <div className="container hero__inner">
           <div className="hero__copy">
-            <span className="accent-label">Est. · Custom Sign Shop</span>
+            <span className="accent-label">Louisiana · Custom Sign Shop</span>
             <h1 className="hero__heading display">
               Signs, banners<br />
               <span className="hero__heading-amp">&amp;</span> the rest.
@@ -48,7 +48,7 @@ export default function Home() {
             <div className="hero__plate-divider" />
             <div className="hero__plate-row"><span>Made</span><span>By Hand</span></div>
             <div className="hero__plate-row"><span>Built</span><span>To Order</span></div>
-            <div className="hero__plate-row"><span>Run</span><span>Locally</span></div>
+            <div className="hero__plate-row"><span>Based</span><span>Louisiana</span></div>
             <div className="hero__plate-stamp">Custom · Signs</div>
           </aside>
         </div>
@@ -59,10 +59,11 @@ export default function Home() {
         <div className="container about-strip__inner">
           <span className="accent-label">About JV3 Signs</span>
           <p className="about-strip__text">
-            JV3 Signs is a home-based custom shop built on word-of-mouth and repeat customers.
-            Every order gets personal, hands-on attention from start to finish. No middlemen,
-            no templates you can&apos;t change, no rush fees hidden in the fine print.
-            You talk to the person making your sign.
+            JV3 Signs is a home-based custom shop in Louisiana, built on word-of-mouth and
+            repeat customers. Most of our work stays close to home, but we take orders from
+            anywhere and ship them out. Every order gets personal, hands-on attention from
+            start to finish &mdash; no middlemen, no templates you can&apos;t change, no rush
+            fees hidden in the fine print. You talk to the person making your sign.
           </p>
         </div>
       </section>
